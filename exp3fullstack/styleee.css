@@ -1,0 +1,78 @@
+/* Default light mode colors */
+:root {
+  --background-color: white;
+  --text-color: black;
+  --header-background: green;
+  --footer-background: green;
+  --sidebar-background: lightgray;
+  --link-color: purple;
+}
+
+/* Dark mode overrides */
+body.dark {
+  --background-color: black;
+  --text-color: white;
+  --header-background: dimgray;
+  --footer-background: gray;
+  --sidebar-background: darkgray;
+  --link-color: violet;
+}
+
+/* Apply colors using variables */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+.dashboard {
+  display: grid;
+  grid-template-areas:
+    "header header"
+    "sidebar main"
+    "footer footer";
+  grid-template-columns: 180px 1fr;
+  grid-template-rows: auto 1fr auto;
+  height: 100vh;
+}
+
+/* Header styling */
+.header {
+  grid-area: header;
+  background-color: var(--header-background);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+/* Sidebar styling */
+.sidebar {
+  grid-area: sidebar;
+  background-color: var(--sidebar-background);
+  padding: 15px;
+}
+
+.sidebar a {
+  display: block;
+  color: var(--link-color);
+  text-decoration: none;
+  margin: 8px 0;
+}
+
+/* Main content styling */
+.main {
+  grid-area: main;
+  padding: 20px;
+}
+
+/* Footer styling */
+.footer {
+  grid-area: footer;
+  background-color: var(--footer-background);
+  color: white;
+  text-align: center;
+  padding: 10px;
+}
